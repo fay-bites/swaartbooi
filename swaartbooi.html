@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Swaartbooi Family Reunion</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #000 10%, #1a1a1a 90%);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Hide content until password is correct */
+#content { display: none; }
+
+h1 { font-family:"Cinzel", serif; font-size:3rem; color:gold; text-transform:uppercase; text-shadow:0 0 20px rgba(255,215,0,0.7); margin-bottom:10px;}
+p.subtitle { color:#ccc; font-size:1.2rem; margin-bottom:50px;}
+.poem-section { max-width:800px; line-height:1.8; background: rgba(255,215,0,0.05); padding:40px; border-radius:20px; box-shadow:0 0 30px rgba(255,215,0,0.1); margin-bottom:50px;}
+h2.section-title { font-family:"Cinzel", serif; color:gold; font-size:2rem; margin-bottom:20px;}
+p.poem { color:#eee; font-size:1.1rem; }
+a.view-btn { display:inline-block; margin-top:30px; padding:15px 40px; background:gold; color:black; font-weight:700; font-size:1.1rem; border-radius:50px; text-decoration:none; box-shadow:0 0 20px rgba(255,215,0,0.4); transition: all 0.3s ease; }
+a.view-btn:hover { background:#ffe26a; transform:translateY(-5px); box-shadow:0 0 40px rgba(255,215,0,0.7); }
+footer { text-align:center; padding:40px 0; color:#aaa; font-size:0.9rem;}
+span.brand { color:gold;}
+@media(max-width:600px){h1{font-size:2.2rem;}h2.section-title{font-size:1.5rem;}p.poem{font-size:1rem;} a.view-btn{padding:12px 30px;font-size:1rem;}}
+</style>
+</head>
+<body>
+
+<div id="passwordPrompt">
+  <h1>Enter Password</h1>
+  <input type="password" id="passInput" placeholder="Enter code" style="padding:10px; font-size:1rem; border-radius:5px; border:none;">
+  <button onclick="checkPassword()" style="padding:10px 20px; margin-left:10px; font-size:1rem; border-radius:5px; background:gold; border:none; cursor:pointer;">Enter</button>
+</div>
+
+<div id="content">
+<header class="hero">
+  <h1>The Swaartbooi Family Reunion</h1>
+  <p class="subtitle">Together in Love, Strength, and Legacy</p>
+</header>
+
+<section class="poem-section">
+  <h2 class="section-title">A Family Like Gold</h2>
+  <p class="poem">
+    We are the Swaartboois — branches of one great tree,<br>
+    Rooted deep in love, standing strong and free.<br>
+    Through laughter and trials, through joy and rain,<br>
+    We rise again, in heart and name.<br><br>
+    Family is not just where we begin,<br>
+    It’s every hand that helps us win.<br>
+    Every story, every tear, every song we sing —<br>
+    Makes the Swaartbooi name forever ring.<br><br>
+    So here we stand, hearts entwined,<br>
+    Generations strong, forever aligned.<br>
+    We are love, we are home, we are one —<br>
+    The Swaartbooi family, shining like the sun.
+  </p>
+
+  <a href="https://photos.app.goo.gl/EQQvthwMZP17CxBU7" class="view-btn" target="_blank" title="Click to view all family photos">
+    📸 View Our Family Memories
+  </a>
+</section>
+
+<footer>
+  <p>Captured with love by <span class="brand">Fays_Portraits</span> © 2025</p>
+</footer>
+</div>
+
+<script>
+function checkPassword(){
+  const password = document.getElementById("passInput").value;
+  if(password === "12345"){
+    document.getElementById("passwordPrompt").style.display = "none";
+    document.getElementById("content").style.display = "block";
+  } else {
+    alert("Incorrect password! Please try again.");
+  }
+}
+</script>
+
+</body>
+</html>
